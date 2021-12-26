@@ -1,4 +1,4 @@
-<div id="panel" >
+<div id="panel">
     <div>
         <label for="" class="title">Komutlar</label>
         <label for="" class="title2"></label>
@@ -15,29 +15,19 @@
 
     <div>
         <label for="Konum" class="title">Konum</label>
-            <label for="" class="title2">X ordinatı</label>
-            <input type="number" [disabled]="disabled" [(ngModel)]="leftInput">
-            <label for="" class="title2">Y</label>
-            <input type="number" [disabled]="disabled" [(ngModel)]="bottomInput">
+        <label for="" class="title2">X ordinatı</label>
+        <input type="number" [disabled]="disabled" [(ngModel)]="leftInput">
+        <label for="" class="title2">Y</label>
+        <input type="number" [disabled]="disabled" [(ngModel)]="bottomInput">
     </div>
-
     <button (click)="textReader()" [disabled]="disabled">Hesapla</button>
 </div>
 
 <div id="map">
-   
-  
     <div *ngFor="let row of rowCounter()" class="row">
         <div *ngFor="let col of columnCounter()" class="column"></div>
     </div>
-    <div [ngStyle]="getStyles(directionDeg,left,bottom)" id="a" >
-     
-            ↑
-       
+    <div [ngStyle]="getStyles(directionDeg,left,bottom)" id="a">
+        ↑
     </div>
 </div>
-
-
-
-
-

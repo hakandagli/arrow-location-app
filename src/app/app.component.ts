@@ -16,7 +16,6 @@ export class AppComponent {
   rows: number = 10;
   bottom: number = 0;
   left: number = 0;
-
   leftInput:number= 4;
   bottomInput:number =3;
 
@@ -75,7 +74,6 @@ export class AppComponent {
   }
 
   arrowLocation() {
-    
     switch (this.directionNumber % 4) {
       case 0: {
         this.bottom += 60;
