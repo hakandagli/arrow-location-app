@@ -1,33 +1,37 @@
-<div id="panel">
-    <div>
-        <label for="" class="title">Komutlar</label>
-        <label for="" class="title2"></label>
-        <input type="text" [disabled]="disabled" [(ngModel)]="text">
-    </div>
+<div id="main-container">
+    <div id="panel">
+        <div>
+            <label for="" class="title">Commends</label>
+            <label for="" class="title2"></label>
+            <input type="text" [disabled]="disabled" [(ngModel)]="text">
+        </div>
+        <div>
+            <label for="" class="title">Size</label>
+            <label for="" class="title2">Row</label>
+            <input type="number" [disabled]="disabled" [(ngModel)]="rows">
+            <label for="" class="title2">Column</label>
+            <input type="number" [disabled]="disabled" [(ngModel)]="columns">
+        </div>
+        <div>
+            <label for="Konum" class="title">Coordinates</label>
+            <label for="" class="title2">X</label>
+            <input type="number" [disabled]="disabled" [(ngModel)]="leftInput">
+            <label for="" class="title2">Y</label>
+            <input type="number" [disabled]="disabled" [(ngModel)]="bottomInput">
+        </div>
 
-    <div>
-        <label for="" class="title">Büyüklük</label>
-        <label for="" class="title2">Row</label>
-        <input type="number" [disabled]="disabled" [(ngModel)]="rows">
-        <label for="" class="title2">Column</label>
-        <input type="number" [disabled]="disabled" [(ngModel)]="columns">
+        <div *ngIf="this.leftInput>this.rows || this.bottomInput>this.columns" style="background:rgb(226, 34, 34); color:white">
+            Coordinates must be within size limits
+        </div>
+        <button (click)="calculate()" [disabled]="disabled">Calculate</button>
     </div>
-
-    <div>
-        <label for="Konum" class="title">Konum</label>
-        <label for="" class="title2">X ordinatı</label>
-        <input type="number" [disabled]="disabled" [(ngModel)]="leftInput">
-        <label for="" class="title2">Y</label>
-        <input type="number" [disabled]="disabled" [(ngModel)]="bottomInput">
-    </div>
-    <button (click)="textReader()" [disabled]="disabled">Hesapla</button>
-</div>
-
-<div id="map">
-    <div *ngFor="let row of rowCounter()" class="row">
-        <div *ngFor="let col of columnCounter()" class="column"></div>
-    </div>
-    <div [ngStyle]="getStyles(directionDeg,left,bottom)" id="a">
-        ↑
+    <hr>
+    <div id="map">
+        <div *ngFor="let row of rowCounter()" class="row">
+            <div *ngFor="let col of columnCounter()" class="column"></div>
+        </div>
+        <div [ngStyle]="getStyles(directionDeg,left,bottom)" id="a">
+            ↑
+        </div>
     </div>
 </div>
