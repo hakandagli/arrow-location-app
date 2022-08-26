@@ -1,4 +1,4 @@
-# OkeyTaslari
+# Arrow Location
 Uygulamanın amacı: girilen Left(L), Right(R), ve Go(G) komutlarına göre belirnenen başlangıç koordinatından, yine bizim belirlediğimiz boyutlar içerisinde oku hareket ettirmek.
 
 ## Neden yaptım ?
